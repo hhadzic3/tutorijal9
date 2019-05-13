@@ -1,20 +1,17 @@
 package ba.unsa.etf.rs.tutorijal8;
 
-
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-
-import java.sql.Driver;
+import org.junit.jupiter.api.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class PripremaTest {
 
     private TransportDAO dao;
+
 
     @BeforeAll
     static void vratiNaPocetak(){
@@ -23,6 +20,13 @@ class PripremaTest {
     }
 
 
+    @BeforeAll
+    static void penal() {
+        try {
+            Class.forName("org.sqlite.JDBC");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace(); }
+    }
     @BeforeEach
     void setUp() {
         dao = TransportDAO.getInstance();

@@ -1,24 +1,36 @@
 package ba.unsa.etf.rs.tutorijal8;
 
-import java.util.Date;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.util.Objects;
 
 public class Driver {
+    private int id;
     private String Ime;
     private String Prezime;
     private String JMB;
-    private Date BirthDate;
-    private Date WorkDate;
+    private LocalDate BirthDate;
+    private LocalDate WorkDate;
 
 
-    public Driver() {
+    public Driver(int id, String name, String surname, int jmb, Date rodjendan, Date datum_zap) {
     }
 
-    public Driver(String ime, String prezime, String JMB, Date birthDate, Date workDate) {
-        Ime = ime;
+    public Driver(String ime, String prezime, String JMB, LocalDate birthDate, LocalDate workDate) {
+        this.id = id;
+        this.Ime = ime;
         Prezime = prezime;
         this.JMB = JMB;
         BirthDate = birthDate;
         WorkDate = workDate;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getIme() {
@@ -45,19 +57,38 @@ public class Driver {
         this.JMB = JMB;
     }
 
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return BirthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         BirthDate = birthDate;
     }
 
-    public Date getWorkDate() {
+    public LocalDate getWorkDate() {
         return WorkDate;
     }
 
-    public void setWorkDate(Date workDate) {
+    public void setWorkDate(LocalDate workDate) {
         WorkDate = workDate;
+    }
+
+    @Override
+    public String toString() {
+        return Ime + " " + Prezime;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Driver driver = (Driver) o;
+        return id == driver.id &&
+                Objects.equals(JMB, driver.JMB);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, JMB);
     }
 }
