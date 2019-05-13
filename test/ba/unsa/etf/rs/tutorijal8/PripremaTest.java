@@ -20,13 +20,6 @@ class PripremaTest {
     }
 
 
-    @BeforeAll
-    static void penal() {
-        try {
-            Class.forName("org.sqlite.JDBC");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace(); }
-    }
     @BeforeEach
     void setUp() {
         dao = TransportDAO.getInstance();

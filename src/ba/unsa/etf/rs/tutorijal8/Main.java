@@ -8,6 +8,7 @@ import java.time.LocalDate;
 public class Main {
 
     public static void main(String[] args) {
+        TransportDAO dao = TransportDAO.getInstance();
             /*try {
                 Class.forName("org.sqlite.JDBC");
             } catch (ClassNotFoundException e) {

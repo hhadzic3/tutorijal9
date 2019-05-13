@@ -26,7 +26,7 @@ public class Bus {
         this.id = id;
     }
 
-    public String getProizvodjac() {
+    public String getMaker() {
         return proizvodjac;
     }
 
@@ -42,7 +42,7 @@ public class Bus {
         this.serija = serija;
     }
 
-    public int getNumberOfSeats() {
+    public int getSeatNumber() {
         return numberOfSeats;
     }
 

@@ -12,7 +12,6 @@ public class Driver {
     private LocalDate BirthDate;
     private LocalDate WorkDate;
 
-
     public Driver(int id, String name, String surname, int jmb, Date rodjendan, Date datum_zap) {
     }
 
@@ -33,7 +32,7 @@ public class Driver {
         this.id = id;
     }
 
-    public String getIme() {
+    public String getName() {
         return Ime;
     }
 
@@ -57,7 +56,7 @@ public class Driver {
         this.JMB = JMB;
     }
 
-    public LocalDate getBirthDate() {
+    public LocalDate getBirthday() {
         return BirthDate;
     }
 
