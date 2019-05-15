@@ -9,15 +9,6 @@ public class Main {
 
     public static void main(String[] args) {
         TransportDAO dao = TransportDAO.getInstance();
-            /*try {
-                Class.forName("org.sqlite.JDBC");
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace(); }
 
-        try {
-            Connection conn = DriverManager.getConnection("jdbc:sqllite:Baza.db");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }*/
     }
 }

@@ -10,7 +10,7 @@ public class Bus {
     public Bus(String iveco, String serija, int i) {
     }
 
-    public Bus(int id , String proizvodjac, String serija, int numberOfSeats, int numberOfDrivers) {
+    public Bus(String proizvodjac, String serija, int numberOfSeats, int numberOfDrivers) {
         this.id = id;
         this.proizvodjac = proizvodjac;
         this.serija = serija;

@@ -12,10 +12,10 @@ public class Driver {
     private LocalDate BirthDate;
     private LocalDate WorkDate;
 
-    public Driver(int id, String name, String surname, int jmb, Date rodjendan, Date datum_zap) {
+    public Driver(String test, String testović, String s, LocalDate localDate, LocalDate now) {
     }
 
-    public Driver(String ime, String prezime, String JMB, LocalDate birthDate, LocalDate workDate) {
+    public Driver(int id , String ime, String prezime, String JMB, LocalDate birthDate, LocalDate workDate) {
         this.id = id;
         this.Ime = ime;
         Prezime = prezime;
@@ -56,16 +56,16 @@ public class Driver {
         this.JMB = JMB;
     }
 
-    public LocalDate getBirthday() {
-        return BirthDate;
+    public Date getBirthday() {
+        return Date.valueOf(BirthDate);
     }
 
     public void setBirthDate(LocalDate birthDate) {
         BirthDate = birthDate;
     }
 
-    public LocalDate getWorkDate() {
-        return WorkDate;
+    public Date getWorkDate() {
+        return Date.valueOf(WorkDate);
     }
 
     public void setWorkDate(LocalDate workDate) {

@@ -19,7 +19,6 @@ class PripremaTest {
         dao.resetDatabase();
     }
 
-
     @BeforeEach
     void setUp() {
         dao = TransportDAO.getInstance();
@@ -70,7 +69,6 @@ class PripremaTest {
             dao.addDriver(new Driver("Priprema","Pripremović","2222222222222",LocalDate.now().minusYears(23),LocalDate.now().minusYears(1)));
             assertFalse(true);
         }
-
     }
 
     @Test
