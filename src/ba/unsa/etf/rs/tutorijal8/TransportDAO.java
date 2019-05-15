@@ -5,7 +5,9 @@ import org.sqlite.JDBC;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.sql.*;
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -79,7 +81,9 @@ public class TransportDAO {
         }
         ulaz.close();
     }
-
+    public Date convertToDateViaSqlDate(LocalDate dateToConvert) {
+        return java.sql.Date.valueOf(dateToConvert);
+    }
     public void addDriver(Driver driver){
         try {
             ResultSet rs = odrediIdDriveraUpit.executeQuery();
@@ -91,8 +95,8 @@ public class TransportDAO {
             addDriver.setString(2, driver.getName());
             addDriver.setString(3, driver.getPrezime());
             addDriver.setString(4 , driver.getJMB());
-            addDriver.setDate(5 , driver.getBirthday());
-            addDriver.setDate(6 , driver.getWorkDate());
+            addDriver.setDate(5 , convertToDateViaSqlDate(driver.getBirthday()));
+            addDriver.setDate(6 , convertToDateViaSqlDate(driver.getWorkDate()));
             addDriver.executeUpdate();
         } catch (SQLException e) {
 
@@ -142,7 +146,9 @@ public class TransportDAO {
         }
         return busevi;
     }
-
+    public LocalDate convertToLocalDateViaSqlDate(Date dateToConvert) {
+        return new java.sql.Date(dateToConvert.getTime()).toLocalDate();
+    }
     private Driver dajVozaceUpit(ResultSet result) {
         Driver driver = null;
         try {
@@ -151,10 +157,10 @@ public class TransportDAO {
                 String name = result.getString("ime");
                 String surname = result.getString("prezime");
                 String jmb = result.getString("JMB");
-                Date rodjendan = result.getDate("datum_rodjenja");
-                Date datum_zap = result.getDate("datum_zaposljenja");
+                LocalDate rodjendan = convertToLocalDateViaSqlDate(result.getDate("datum_rodjenja"));
+                LocalDate datum_zap = convertToLocalDateViaSqlDate(result.getDate("datum_zaposljenja"));
 
-                driver = new Driver( name , surname , jmb , rodjendan.toLocalDate() , datum_zap.toLocalDate());
+                driver = new Driver( name , surname , jmb , rodjendan , datum_zap);
                 driver.setId(id);
             }
         } catch (SQLException e) {
