@@ -1,4 +1,4 @@
-/*package ba.unsa.etf.rs.tutorijal8;
+package ba.unsa.etf.rs.tutorijal8;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +15,7 @@ public class Zadatak2Test {
     @BeforeEach
     void setUp() {
         TransportDAO dao = TransportDAO.getInstance();
-        dao.regenerisiBazu();
+        dao.resetDatabase(); // provjerit!!!
     }
 
 
@@ -124,4 +124,4 @@ public class Zadatak2Test {
         System.setIn(inputHolder);
         return defaultSystemIn;
     }
-}*/
+}

@@ -85,14 +85,13 @@ public class Driver {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Driver)) return false;
         Driver driver = (Driver) o;
-        return id == driver.id &&
-                Objects.equals(JMB, driver.JMB);
+        return Objects.equals(getJMB(), driver.getJMB());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, JMB);
+        return Objects.hash(getJMB());
     }
 }

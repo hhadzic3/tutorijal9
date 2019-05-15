@@ -58,6 +58,9 @@ public class Bus {
         this.numberOfDrivers = numberOfDrivers;
     }
 
+    public short getDriverOne() {
+        return 0;
+    }
 }
 
 
