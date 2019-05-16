@@ -16,7 +16,8 @@ public class TransportDAO {
 
    private Connection conn;
     private static PreparedStatement dajVozaceUpit,dajBusUpit,
-            odrediIdDriveraUpit,   addDriver , obrisiBusUpit , dodajBusUpit ,obrisiDriverUpit ,odrediIdBusaUpit, truncBus , truncDriver;
+            odrediIdDriveraUpit,truncVozaciBuseva, dodajVouzacaBusa , addDriver , obrisiBusUpit ,
+            dodajBusUpit ,obrisiDriverUpit ,odrediIdBusaUpit, truncBus , truncDriver , dajJMB;
 
 
     private static TransportDAO instance;
@@ -53,6 +54,10 @@ public class TransportDAO {
             odrediIdDriveraUpit = conn.prepareStatement("SELECT MAX(vozac_id)+1 FROM Vozac");
             truncBus = conn.prepareStatement("DELETE FROM Bus");
             truncDriver = conn.prepareStatement("DELETE FROM Vozac");
+            truncVozaciBuseva = conn.prepareStatement("DELETE FROM VozaciBuseva");
+            dodajVouzacaBusa = conn.prepareStatement("INSERT INTO VozaciBuseva VALUES (?,?)");
+            dajJMB = conn.prepareStatement("SELECT JMB FROM Vozac");
+
         } catch (SQLException e) {
             regenerisiBazu();
             e.printStackTrace();
@@ -163,6 +168,7 @@ public class TransportDAO {
 
                 driver = new Driver( name , surname , jmb , rodjendan , datum_zap);
                 driver.setId(id);
+
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -211,7 +217,7 @@ public class TransportDAO {
     }
 
     public void resetDatabase() {
-        try {
+        try {truncVozaciBuseva.executeUpdate();
             truncBus.executeUpdate();
             truncDriver.executeUpdate();
         } catch (SQLException e) {
@@ -219,8 +225,21 @@ public class TransportDAO {
         }
     }
 
-
-
     public void dodijeliVozacuAutobus(Driver driver, Bus bus, int which) {
+        try {
+            dodajVouzacaBusa.setInt(1 , bus.getId());
+            dodajVouzacaBusa.setInt(2,driver.getId());
+            dodajVouzacaBusa.executeUpdate();
+            if(which == 1){
+                bus.setFirstDriver(driver);
+            }
+            if (which == 2){
+                bus.setSecondDriver(driver);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 }

@@ -82,7 +82,7 @@ public class Driver {
 
     @Override
     public String toString() {
-        return Ime + " " + Prezime;
+        return  " - (" + this.getName() + " " + this.getPrezime() + " ( " + this.getJMB() + " ))";
     }
 
     @Override

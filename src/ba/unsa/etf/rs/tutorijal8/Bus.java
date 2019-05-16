@@ -9,6 +9,14 @@ public class Bus {
     private Driver FirstDriver = null;
     private Driver SecondDriver = null;
 
+    public void setFirstDriver(Driver firstDriver) {
+        FirstDriver = firstDriver;
+    }
+
+    public void setSecondDriver(Driver secondDriver) {
+        SecondDriver = secondDriver;
+    }
+
     public Bus(){ }
 
     public Bus(String proizvodjac, String serija, int numberOfSeats) {
@@ -80,6 +88,19 @@ public class Bus {
 
     public Driver getDriverTwo() {
         return SecondDriver;
+    }
+
+    @Override
+    public String toString() {
+        String ispisBusa = "";
+        ispisBusa += this.proizvodjac + " " + this.serija + " ( seats: " + this.getSeatNumber() + " )";
+        if (FirstDriver != null) {
+            ispisBusa += FirstDriver.toString();
+        }
+        if (SecondDriver != null) {
+            ispisBusa += SecondDriver.toString();
+        }
+        return ispisBusa;
     }
 }
 
