@@ -15,7 +15,7 @@ public class Zadatak2Test {
     @BeforeEach
     void setUp() {
         TransportDAO dao = TransportDAO.getInstance();
-        dao.resetDatabase(); // provjerit!!!
+        dao.resetDatabase();
     }
 
 

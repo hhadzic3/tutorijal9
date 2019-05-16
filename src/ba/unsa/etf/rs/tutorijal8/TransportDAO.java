@@ -179,9 +179,9 @@ public class TransportDAO {
                 String proizvodjac = result.getString("proizvodjac");
                 String serija = result.getString("serija");
                 int brojSjedista = result.getInt("broj_sjedista");
-                int brojVozaca = result.getInt("broj_vozaca");
+                //int brojVozaca = result.getInt("broj_vozaca");
 
-                bus = new Bus( proizvodjac , serija , brojSjedista , brojVozaca);
+                bus = new Bus( proizvodjac , serija , brojSjedista);
                 bus.setId(id);
             }
         } catch (SQLException e) {
@@ -217,5 +217,10 @@ public class TransportDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+
+
+    public void dodijeliVozacuAutobus(Driver driver, Bus bus, int which) {
     }
 }

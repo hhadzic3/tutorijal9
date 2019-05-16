@@ -12,6 +12,9 @@ public class Driver {
     private LocalDate BirthDate;
     private LocalDate WorkDate;
 
+    public Driver() {
+    }
+
     public Driver(String ime, String prezime, String JMB, LocalDate birthDate, LocalDate workDate) {
         this.Ime = ime;
         Prezime = prezime;

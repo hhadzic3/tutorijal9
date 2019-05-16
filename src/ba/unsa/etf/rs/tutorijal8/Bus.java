@@ -6,16 +6,32 @@ public class Bus {
     private String serija;
     private int numberOfSeats;
     private int numberOfDrivers;
+    private Driver FirstDriver = null;
+    private Driver SecondDriver = null;
 
-    public Bus(String iveco, String serija, int i) {
+    public Bus(){ }
+
+    public Bus(String proizvodjac, String serija, int numberOfSeats) {
+        this.proizvodjac = proizvodjac;
+        this.serija = serija;
+        this.numberOfSeats = numberOfSeats;
     }
 
-    public Bus(String proizvodjac, String serija, int numberOfSeats, int numberOfDrivers) {
-        this.id = id;
+    public Bus( int Id, String proizvodjac, String serija, int numberOfSeats, int numberOfDrivers) {
+        id = Id;
         this.proizvodjac = proizvodjac;
         this.serija = serija;
         this.numberOfSeats = numberOfSeats;
         this.numberOfDrivers = numberOfDrivers;
+    }
+   public Bus( int Id, String proizvodjac, String serija, int numberOfSeats, int numberOfDrivers , Driver firstDriver , Driver secondDriver) {
+        id = Id;
+        this.proizvodjac = proizvodjac;
+        this.serija = serija;
+        this.numberOfSeats = numberOfSeats;
+        this.numberOfDrivers = numberOfDrivers;
+        FirstDriver = firstDriver;
+        SecondDriver = secondDriver;
     }
 
     public int getId() {
@@ -58,8 +74,12 @@ public class Bus {
         this.numberOfDrivers = numberOfDrivers;
     }
 
-    public short getDriverOne() {
-        return 0;
+    public Driver getDriverOne() {
+       return FirstDriver;
+    }
+
+    public Driver getDriverTwo() {
+        return SecondDriver;
     }
 }
 

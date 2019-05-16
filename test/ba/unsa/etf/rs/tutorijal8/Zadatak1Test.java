@@ -14,7 +14,7 @@ public class Zadatak1Test {
     @BeforeEach
     void prepareDatabase(){
         TransportDAO dao = TransportDAO.getInstance();
-        dao.regenerisiBazu();
+        dao.resetDatabase();
     }
 
     @Test
