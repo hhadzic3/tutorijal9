@@ -67,7 +67,6 @@
     </column>
     <index id="22" parent="7" name="Vozac_JMB_uindex">
       <ColNames>JMB</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="23" parent="7">

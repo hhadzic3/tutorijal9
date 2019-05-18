@@ -1,4 +1,4 @@
-package ba.unsa.etf.rs.tutorijal8;
+package ba.unsa.etf.rs.tutorijal9;
 
 public class Bus {
     private int id;

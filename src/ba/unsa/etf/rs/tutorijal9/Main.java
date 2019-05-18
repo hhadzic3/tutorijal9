@@ -1,18 +1,34 @@
-package ba.unsa.etf.rs.tutorijal8;
+package ba.unsa.etf.rs.tutorijal9;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Scanner;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import java.io.IOException;
 
-public class Main {
+public class Main extends Application {
 
     private static TransportDAO dao ;
+    @Override
+    public void start(Stage primaryStage) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/glavni.fxml"));
+        GlavniController ctrl = new GlavniController();
+        loader.setController(ctrl);
+        Parent root = loader.load();
+        primaryStage.setTitle("Vozaci i busevi");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();
+    }
 
     public static void main(String[] args) {
+        launch(args);
+    }
+
+
+
+
+ /*   public static void main(String[] args) {
 
         dao = TransportDAO.getInstance();
         Scanner tok = new Scanner(System.in);
@@ -63,7 +79,7 @@ public class Main {
             System.out.println((i+1)+". " + dao.getDrivers().get(i));
         }
         int index = tok.nextInt()-1;
-        ba.unsa.etf.rs.tutorijal8.Driver driver = dao.getDrivers().get(index);
+        Driver driver = dao.getDrivers().get(index);
         dao.deleteDriver(driver);
     }
 
@@ -93,7 +109,7 @@ public class Main {
         }
         System.out.print("Index: ");
         int driverIndex = tok.nextInt()-1;
-        ba.unsa.etf.rs.tutorijal8.Driver driver = dao.getDrivers().get(driverIndex);
+        Driver driver = dao.getDrivers().get(driverIndex);
         System.out.println("Odaberite autobus: ");
         for (int i = 0; i < dao.getBusses().size(); i++) {
             System.out.println((i+1)+". "+dao.getBusses().get(i).toString());
@@ -110,6 +126,6 @@ public class Main {
         }
         dao.dodijeliVozacuAutobus(driver,bus,which);
     }
-
+*/
 }
 

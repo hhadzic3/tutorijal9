@@ -1,6 +1,5 @@
-package ba.unsa.etf.rs.tutorijal8;
+package ba.unsa.etf.rs.tutorijal9;
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.Objects;
 

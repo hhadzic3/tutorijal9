@@ -1,4 +1,4 @@
-package ba.unsa.etf.rs.tutorijal8;
+package ba.unsa.etf.rs.tutorijal9;
 
 import org.sqlite.JDBC;
 
@@ -85,6 +85,19 @@ public class TransportDAO {
             e.printStackTrace();
         }
         ulaz.close();
+    }
+    public static void removeInstance() {
+        if (instance == null) return;
+        instance.close();
+        instance = null;
+    }
+
+    public void close() {
+        try {
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public Date convertToDateViaSqlDate(LocalDate dateToConvert) {
