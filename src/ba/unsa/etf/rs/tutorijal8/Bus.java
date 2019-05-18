@@ -25,19 +25,19 @@ public class Bus {
         this.numberOfSeats = numberOfSeats;
     }
 
-    public Bus( int Id, String proizvodjac, String serija, int numberOfSeats, int numberOfDrivers) {
+    public Bus( int Id, String proizvodjac, String serija, int numberOfSeats) {
         id = Id;
         this.proizvodjac = proizvodjac;
         this.serija = serija;
         this.numberOfSeats = numberOfSeats;
-        this.numberOfDrivers = numberOfDrivers;
+
     }
-   public Bus( int Id, String proizvodjac, String serija, int numberOfSeats, int numberOfDrivers , Driver firstDriver , Driver secondDriver) {
+   public Bus(int Id, String proizvodjac, String serija, int numberOfSeats, Driver firstDriver, Driver secondDriver) {
         id = Id;
         this.proizvodjac = proizvodjac;
         this.serija = serija;
         this.numberOfSeats = numberOfSeats;
-        this.numberOfDrivers = numberOfDrivers;
+
         FirstDriver = firstDriver;
         SecondDriver = secondDriver;
     }

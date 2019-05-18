@@ -65,53 +65,58 @@
       <Position>6</Position>
       <DataType>DATE|0s</DataType>
     </column>
-    <key id="22" parent="7">
+    <index id="22" parent="7" name="Vozac_JMB_uindex">
+      <ColNames>JMB</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="23" parent="7">
       <ColNames>vozac_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="23" parent="8" name="driverId">
+    <column id="24" parent="8" name="driverId">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
-    <column id="24" parent="8" name="busId">
+    <column id="25" parent="8" name="busId">
       <Position>2</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
-    <column id="25" parent="8" name="VozaciBuseva_id">
+    <column id="26" parent="8" name="VozaciBuseva_id">
       <Position>3</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
-    <key id="26" parent="8">
+    <key id="27" parent="8">
       <ColNames>VozaciBuseva_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="27" parent="8">
+    <foreign-key id="28" parent="8">
       <ColNames>driverId</ColNames>
       <RefTableName>Vozac</RefTableName>
       <RefColNames>vozac_id</RefColNames>
     </foreign-key>
-    <foreign-key id="28" parent="8">
+    <foreign-key id="29" parent="8">
       <ColNames>busId</ColNames>
       <RefTableName>Bus</RefTableName>
       <RefColNames>bus_id</RefColNames>
     </foreign-key>
-    <column id="29" parent="9" name="type">
+    <column id="30" parent="9" name="type">
       <Position>1</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="30" parent="9" name="name">
+    <column id="31" parent="9" name="name">
       <Position>2</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="31" parent="9" name="tbl_name">
+    <column id="32" parent="9" name="tbl_name">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="32" parent="9" name="rootpage">
+    <column id="33" parent="9" name="rootpage">
       <Position>4</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="33" parent="9" name="sql">
+    <column id="34" parent="9" name="sql">
       <Position>5</Position>
       <DataType>text|0s</DataType>
     </column>
