@@ -4,15 +4,8 @@
     <list default="true" id="421d7fb7-fab3-48c2-b140-ac993b300cb0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Baza.db" beforeDir="false" afterPath="$PROJECT_DIR$/Baza.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resorces/fxml/bus.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resorces/fxml/bus.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resorces/fxml/driver.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resorces/fxml/driver.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resorces/fxml/glavni.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resorces/fxml/glavni.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/Bus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/BusController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/BusController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/DriverController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/DriverController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/GlavniController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/GlavniController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/TransportDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/TransportDAO.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,11 +57,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="189">
+              <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/GlavniController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="188" column="41" lean-forward="true" selection-start-line="188" selection-start-column="41" selection-end-line="188" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -79,24 +84,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/TransportDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="185" column="77" selection-start-line="185" selection-start-column="77" selection-end-line="185" selection-end-column="77" />
+            <state relative-caret-position="-4060">
+              <caret line="57" column="130" selection-start-line="57" selection-start-column="130" selection-end-line="57" selection-end-column="130" />
               <folding>
                 <element signature="e#3768#3769#0" expanded="true" />
                 <element signature="e#3827#3828#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/DriverController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="46" selection-start-line="46" selection-end-line="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1373#1374#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -145,7 +137,6 @@
         <option value="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/unsa/etf/rs/tutorijal9/Main.java" />
         <option value="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/unsa/etf/rs/tutorijal9/unsa/etf/rs/tutorijal9/Main.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/TransportDAO.java" />
         <option value="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/Bus.java" />
         <option value="$PROJECT_DIR$/resorces/fxml/bus.fxml" />
         <option value="$PROJECT_DIR$/resorces/fxml/driver.fxml" />
@@ -153,8 +144,9 @@
         <option value="$PROJECT_DIR$/resorces/fxml/glavni.fxml" />
         <option value="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/DriverController.java" />
         <option value="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/BusController.java" />
-        <option value="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/GlavniController.java" />
         <option value="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/Main.java" />
+        <option value="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/TransportDAO.java" />
+        <option value="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/GlavniController.java" />
       </list>
     </option>
   </component>
@@ -215,7 +207,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558379512613" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558381585783" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="database.console.LAST_STATE" value="false" />
@@ -388,7 +380,7 @@
       <workItem from="1558335517566" duration="55000" />
       <workItem from="1558337252197" duration="4921000" />
       <workItem from="1558367947925" duration="3028000" />
-      <workItem from="1558376755044" duration="2749000" />
+      <workItem from="1558376755044" duration="4814000" />
     </task>
     <task id="LOCAL-00001" summary="Priprema za tut">
       <created>1557663453148</created>
@@ -467,7 +459,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558370896997</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Uspjesno uradjen tutorijal 9">
+      <created>1558379547189</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1558379547189</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -503,7 +502,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70429000" />
+    <option name="totallyTimeSpent" value="72494000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -588,7 +587,8 @@
     <MESSAGE value="Dodan FXML i controller" />
     <MESSAGE value="implementacija bez propertija" />
     <MESSAGE value="Usjpjesna implementajica sa propertijem" />
-    <option name="LAST_COMMIT_MESSAGE" value="Usjpjesna implementajica sa propertijem" />
+    <MESSAGE value="Uspjesno uradjen tutorijal 9" />
+    <option name="LAST_COMMIT_MESSAGE" value="Uspjesno uradjen tutorijal 9" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -721,10 +721,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/DriverController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/TransportDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="185" column="77" selection-start-line="185" selection-start-column="77" selection-end-line="185" selection-end-column="77" />
+        <state relative-caret-position="-4060">
+          <caret line="57" column="130" selection-start-line="57" selection-start-column="130" selection-end-line="57" selection-end-column="130" />
           <folding>
             <element signature="e#3768#3769#0" expanded="true" />
             <element signature="e#3827#3828#0" expanded="true" />
@@ -732,31 +752,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/DriverController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1373#1374#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/GlavniController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2758">
-          <caret line="147" column="4" selection-start-line="147" selection-start-column="4" selection-end-line="147" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal9/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="315">
+          <caret line="188" column="41" lean-forward="true" selection-start-line="188" selection-start-column="41" selection-end-line="188" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

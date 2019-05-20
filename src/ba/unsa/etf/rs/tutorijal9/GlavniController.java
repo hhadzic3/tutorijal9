@@ -141,9 +141,63 @@ public class GlavniController {
     }
 
     public void akcijaEditDrivera(ActionEvent actionEvent) {
+        Driver driver = tabelaDriver.getSelectionModel().getSelectedItem();
+        if (driver == null) return;
+
+        Stage stage = new Stage();
+        Parent root = null;
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/driver.fxml"));
+            DriverController driverController = new DriverController();
+            loader.setController(driverController);
+            root = loader.load();
+            stage.setTitle("Driver");
+            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.setResizable(false);
+            stage.show();
+
+            stage.setOnHiding( event -> {
+                Driver driver1 = driverController.getDriver();
+                if (driver1 != null) {
+                    dao.izmijeniDrivera(driver1);
+                    listDrivera.setAll(dao.getDrivers());
+
+                }
+            } );
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public void akcijaEditBus(ActionEvent actionEvent) {
+        Bus bus = tabelaBus.getSelectionModel().getSelectedItem();
+        if (bus == null) return;
+
+        Stage stage = new Stage();
+        Parent root = null;
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/bus.fxml"));
+            BusController busController = new BusController();
+            loader.setController(busController);
+            root = loader.load();
+            stage.setTitle("Bus");
+            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.setResizable(false);
+            stage.show();
+
+            stage.setOnHiding( event -> {
+                Bus bus1 = busController.getBus();
+                if (bus1 != null) {
+                    dao.izmijeniBus(bus1);
+                    listBusses.setAll(dao.getBusses());
+
+                }
+            } );
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }

@@ -16,7 +16,8 @@ public class TransportDAO {
     private Connection conn;
     private static PreparedStatement dajVozaceUpit,dajBusUpit,
             odrediIdDriveraUpit,truncVozaciBuseva, dodajVouzacaBusa , addDriver , obrisiBusUpit ,
-            dodajBusUpit ,obrisiDriverUpit ,odrediIdBusaUpit, truncBus , truncDriver , dajJMB , getDodjelaVozaci;
+            dodajBusUpit ,obrisiDriverUpit ,odrediIdBusaUpit, truncBus , truncDriver ,
+            updateBus ,updateDriver,dajJMB , getDodjelaVozaci;
 
 
     private static TransportDAO instance;
@@ -53,6 +54,10 @@ public class TransportDAO {
             truncBus = conn.prepareStatement("DELETE FROM Bus");
             truncDriver = conn.prepareStatement("DELETE FROM Vozac");
             truncVozaciBuseva = conn.prepareStatement("DELETE FROM VozaciBuseva");
+            updateDriver = conn.prepareStatement("UPDATE Vozac SET ime=?, prezime=?, JMB=?, datum_rodjenja=?, datum_zaposljenja=? WHERE vozac_id=?");
+            updateBus = conn.prepareStatement("UPDATE Bus SET proizvodjac=?, serija=?, broj_sjedista=?, broj_vozaca=? WHERE bus_id=?");
+
+
 /*
             getDodjelaVozaci = conn.prepareStatement("SELECT DISTINCT v.vozac_id, v.ime, v.prezime, v.JMB, v.datum_rodjenja, v.datum_zaposljenja" +
                     " FROM VozaciBuseva vd , Vozac v WHERE vd.driverId = v.vozac_id AND vd.busId=?");
@@ -205,27 +210,7 @@ public class TransportDAO {
 
                 bus = new Bus( proizvodjac , serija , brojSjedista);
                 bus.setId(id);
-/*                ResultSet result2 = getDodjelaVozaci.executeQuery();
-                Driver v1;
-                ArrayList<Driver> drivers = new ArrayList<Driver>();
-                while (result2.next()) {
-                    Integer idDriver = result2.getInt(1);
-                    String name = result2.getString(2);
-                    String surname = result2.getString(3);
-                    String jmb = result2.getString(4);
-                    Date birthDate = result2.getDate(5);
-                    Date hireDate = result2.getDate(5);
-                    drivers.add(new Driver(idDriver, name, surname, jmb, birthDate.toLocalDate(), hireDate.toLocalDate()));
-                    System.out.println("size:" + drivers.size());
-                }
-                if (drivers.size() == 1)
-                    bus = new Bus(id, proizvodjac, serija, brojSjedista, drivers.get(0), null);
 
-                else if (drivers.size() == 2)
-                    bus=new Bus(id, proizvodjac, serija, brojSjedista, drivers.get(0), drivers.get(1));
-
-                else bus=new Bus(id, proizvodjac, serija, brojSjedista, null, null);
-  */
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -261,6 +246,34 @@ public class TransportDAO {
             e.printStackTrace();
         }
     }
+
+    public void izmijeniDrivera (Driver driver) {
+        try {
+            updateDriver.setString(1, driver.getIme());
+            updateDriver.setString(2, driver.getPrezime());
+            updateDriver.setString(3, driver.getJMB());
+            updateDriver.setDate(4, Date.valueOf(driver.getBirthDate()));
+            updateDriver.setDate(5, Date.valueOf(driver.getWorkDate()));
+            updateDriver.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void izmijeniBus(Bus bus) {
+        try {
+            updateBus.setString(1, bus.getProizvodjac());
+            updateBus.setString(2, bus.getSerija());
+            updateBus.setInt(3, bus.getNumberOfSeats());
+            updateBus.setInt(4, bus.getNumberOfDrivers());
+            updateBus.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+    }
+
 
 /*
     public void dodijeliVozacuAutobus(Driver driver, Bus bus, int which) {
