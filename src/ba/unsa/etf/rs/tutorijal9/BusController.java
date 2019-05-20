@@ -20,6 +20,7 @@ public class BusController {
             fldMaker.setText(bus.getProizvodjac());
             fldSerija.setText(bus.getSerija());
             fldBrSjedista.setText(String.valueOf(bus.getNumberOfSeats()));
+            spinerBrVozaca.setPromptText(String.valueOf(bus.getNumberOfDrivers()));
         }
     }
 
@@ -36,6 +37,8 @@ public class BusController {
         Stage stage = (Stage) fldMaker.getScene().getWindow();
         stage.close();
     }
+
+
 
     public Bus getBus() {
         return bus;

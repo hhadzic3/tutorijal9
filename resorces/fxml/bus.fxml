@@ -13,8 +13,8 @@
 <GridPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
           <!--fx:controller="ba.unsa.etf.rs.tutorijal9.BusController"-->
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="105.60003662109375" minWidth="10.0" prefWidth="105.60003662109375" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.199951171875" minWidth="10.0" prefWidth="94.39996337890625" />
   </columnConstraints>
   <rowConstraints>
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -56,6 +56,6 @@
       </ButtonBar>
       <TextField fx:id="fldSerija" GridPane.columnIndex="1" GridPane.rowIndex="1" />
       <TextField fx:id="fldBrSjedista" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <Spinner fx:id="spinerBrVozaca" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Spinner fx:id="spinerBrVozaca" max="2" min="0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
    </children>
 </GridPane>

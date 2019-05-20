@@ -139,13 +139,11 @@ public class GlavniController {
         dbfile.delete();
         dao = TransportDAO.getInstance();
     }
-//    public void otvoriNovi(ActionEvent actionEvent) throws Exception {
-//    Stage myStage = new Stage();
-//    Parent root = FXMLLoader.load(getClass().getResource("/fxml/novi.fxml"));
-//    myStage.setTitle("Novi prozor");
-//    myStage.setScene(new Scene(root, 300, 275));
-//    myStage.show();
-//    }
 
+    public void akcijaEditDrivera(ActionEvent actionEvent) {
+    }
+
+    public void akcijaEditBus(ActionEvent actionEvent) {
+    }
 
 }
