@@ -111,10 +111,10 @@ public class TransportDAO {
                 id = rs.getInt(1);
             }
             addDriver.setInt(1, id);
-            addDriver.setString(2, driver.getName());
+            addDriver.setString(2, driver.getIme());
             addDriver.setString(3, driver.getPrezime());
             addDriver.setString(4 , driver.getJMB());
-            addDriver.setDate(5 , convertToDateViaSqlDate(driver.getBirthday()));
+            addDriver.setDate(5 , convertToDateViaSqlDate(driver.getBirthDate()));
              addDriver.setDate(6 , convertToDateViaSqlDate(driver.getWorkDate()));
             addDriver.executeUpdate();
         } catch (SQLException e) {
@@ -129,9 +129,9 @@ public class TransportDAO {
                 id = rs.getInt(1);
             }
             dodajBusUpit.setInt(1, id);
-            dodajBusUpit.setString(2, bus.getMaker());
+            dodajBusUpit.setString(2, bus.getProizvodjac());
             dodajBusUpit.setString(3, bus.getSerija());
-            dodajBusUpit.setInt(4, bus.getSeatNumber());
+            dodajBusUpit.setInt(4, bus.getNumberOfSeats());
             dodajBusUpit.setInt(5,bus.getNumberOfDrivers());
             dodajBusUpit.executeUpdate();
         } catch (SQLException e) {

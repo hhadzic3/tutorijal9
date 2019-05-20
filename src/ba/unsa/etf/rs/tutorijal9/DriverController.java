@@ -21,7 +21,7 @@ public class DriverController {
     @FXML
     public void initialize() {
         if (driver != null) {
-            fldIme.setText(driver.getName());
+            fldIme.setText(driver.getIme());
             fldPrezime.setText(driver.getPrezime());
             fldJMBG.setText(driver.getJMB());
         }

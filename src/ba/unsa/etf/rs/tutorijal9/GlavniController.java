@@ -107,8 +107,8 @@ public class GlavniController {
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Potvrda brisanja");
-        alert.setHeaderText("Brisanje vozaca "+vozac.getName());
-        alert.setContentText("Da li ste sigurni da želite obrisati vozaca " +vozac.getName()+"?");
+        alert.setHeaderText("Brisanje vozaca "+vozac.getIme());
+        alert.setContentText("Da li ste sigurni da želite obrisati vozaca " +vozac.getIme()+"?");
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
@@ -123,8 +123,8 @@ public class GlavniController {
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Potvrda brisanja");
-        alert.setHeaderText("Brisanje busa "+bus.getMaker());
-        alert.setContentText("Da li ste sigurni da želite obrisati bus " +bus.getMaker()+"?");
+        alert.setHeaderText("Brisanje busa "+bus.getProizvodjac());
+        alert.setContentText("Da li ste sigurni da želite obrisati bus " +bus.getProizvodjac()+"?");
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){

@@ -17,9 +17,9 @@ public class BusController {
     @FXML
     public void initialize() {
         if (bus != null) {
-            fldMaker.setText(bus.getMaker());
+            fldMaker.setText(bus.getProizvodjac());
             fldSerija.setText(bus.getSerija());
-            fldBrSjedista.setText(String.valueOf(bus.getSeatNumber()));
+            fldBrSjedista.setText(String.valueOf(bus.getNumberOfSeats()));
         }
     }
 
