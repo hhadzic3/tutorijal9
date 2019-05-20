@@ -14,25 +14,24 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Optional;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 public class GlavniController {
     public TableView<Driver> tabelaDriver;
-    public TableColumn imeDrivera;
-    public TableColumn prezimeDrivera;
+    public TableColumn<Driver , String> imeDrivera;
+    public TableColumn<Driver , String> prezimeDrivera;
+
     public TableView<Bus> tabelaBus;
-    public TableColumn makerBus;
-    public TableColumn serijaBus;
+    public TableColumn<Bus , String> makerBus;
+    public TableColumn<Bus , String> serijaBus;
+
     private TransportDAO dao;
     private ObservableList<Driver> listDrivera;
     private ObservableList<Bus> listBusses;
-
 
     public GlavniController() {
         dao = TransportDAO.getInstance();
@@ -43,24 +42,13 @@ public class GlavniController {
     @FXML
     public void initialize() {
         tabelaDriver.setItems(listDrivera);
+        imeDrivera.setCellValueFactory(new PropertyValueFactory<>("Ime"));
+        prezimeDrivera.setCellValueFactory(new PropertyValueFactory<>("Prezime"));
+
         tabelaBus.setItems(listBusses);
-        //idDrivera.setCellValueFactory(new PropertyValueFactory("id"));
-        imeDrivera.setCellValueFactory(new PropertyValueFactory("ime"));
-        prezimeDrivera.setCellValueFactory(new PropertyValueFactory("prezime"));
-        makerBus.setCellValueFactory(new PropertyValueFactory("proizvodjac"));
-        serijaBus.setCellValueFactory(new PropertyValueFactory("serija"));
+        makerBus.setCellValueFactory(new PropertyValueFactory<>("proizvodjac"));
+        serijaBus.setCellValueFactory(new PropertyValueFactory<>("serija"));
     }
-
-
-
-    // Metoda za potrebe testova, vraća bazu u polazno stanje
-    public void resetujBazu() {
-        TransportDAO.removeInstance();
-        File dbfile = new File("Baza.db");
-        dbfile.delete();
-        dao = TransportDAO.getInstance();
-    }
-
 
     public void dodajVozaca(ActionEvent actionEvent) {
         Stage stage = new Stage();
@@ -92,7 +80,7 @@ public class GlavniController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/drzava.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/bus.fxml"));
             BusController busController = new BusController();
             loader.setController(busController);
             root = loader.load();
@@ -135,7 +123,7 @@ public class GlavniController {
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Potvrda brisanja");
-        alert.setHeaderText("Brisanje grada "+bus.getMaker());
+        alert.setHeaderText("Brisanje busa "+bus.getMaker());
         alert.setContentText("Da li ste sigurni da želite obrisati bus " +bus.getMaker()+"?");
 
         Optional<ButtonType> result = alert.showAndWait();
@@ -144,5 +132,20 @@ public class GlavniController {
             listBusses.setAll(dao.getBusses());
         }
     }
+    // Metoda za potrebe testova, vraća bazu u polazno stanje
+    public void resetujBazu() {
+        TransportDAO.removeInstance();
+        File dbfile = new File("Baza.db");
+        dbfile.delete();
+        dao = TransportDAO.getInstance();
+    }
+//    public void otvoriNovi(ActionEvent actionEvent) throws Exception {
+//    Stage myStage = new Stage();
+//    Parent root = FXMLLoader.load(getClass().getResource("/fxml/novi.fxml"));
+//    myStage.setTitle("Novi prozor");
+//    myStage.setScene(new Scene(root, 300, 275));
+//    myStage.show();
+//    }
+
 
 }

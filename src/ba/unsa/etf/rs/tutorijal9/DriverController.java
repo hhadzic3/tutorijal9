@@ -3,9 +3,11 @@ package ba.unsa.etf.rs.tutorijal9;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class DriverController {
@@ -27,7 +29,8 @@ public class DriverController {
 
     public void akcijaCancel(ActionEvent actionEvent) {
         driver = null;
-        Stage stage = (Stage) fldIme.getScene().getWindow();
+        Node n = (Node) actionEvent.getSource();
+        Stage stage = (Stage) n.getScene().getWindow();
         stage.close();
     }
 
@@ -35,6 +38,8 @@ public class DriverController {
         if (driver == null) driver = new Driver();
         driver.setIme(fldIme.getText());
         driver.setPrezime(fldPrezime.getText());
+        driver.setBirthDate(LocalDate.now());
+        driver.setWorkDate(LocalDate.now());
         Stage stage = (Stage) fldIme.getScene().getWindow();
         stage.close();
     }

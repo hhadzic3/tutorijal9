@@ -80,19 +80,7 @@ public class Driver {
 
     @Override
     public String toString() {
-        return  " - (" + this.getName() + " " + this.getPrezime() + " ( " + this.getJMB() + " ))";
+        return  this.getName() + " " + this.getPrezime() ;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Driver)) return false;
-        Driver driver = (Driver) o;
-        return Objects.equals(getJMB(), driver.getJMB());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getJMB());
-    }
 }

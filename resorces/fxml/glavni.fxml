@@ -9,50 +9,57 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rs.tutorijal9.GlavniController">
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+            <!--fx:controller="ba.unsa.etf.rs.tutorijal9.GlavniController"-->
    <left>
       <TableView fx:id="tabelaDriver" prefHeight="400.0" prefWidth="176.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn fx:id="imeDrivera" prefWidth="75.0" text="Ime vozaca" />
-          <TableColumn fx:id="prezimeDrivera" prefWidth="96.800048828125" text="Prezime vozaca" />
+          <TableColumn fx:id="imeDrivera" prefWidth="87.19998300075531" text="Ime vozaca" />
+          <TableColumn fx:id="prezimeDrivera" prefWidth="85.60004425048828" text="Prezime vozaca" />
         </columns>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
       </TableView>
    </left>
    <center>
-      <TableView fx:id="tabelaBus" prefHeight="400.0" prefWidth="256.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="tabelaBus" prefHeight="400.0" prefWidth="208.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn fx:id="makerBus" prefWidth="114.4000244140625" text="Proizvodjac busa" />
-          <TableColumn fx:id="serijaBus" prefWidth="109.5999755859375" text="Serija busa" />
+          <TableColumn fx:id="makerBus" prefWidth="105.60002440214157" text="Proizvodjac busa" />
+          <TableColumn fx:id="serijaBus" prefWidth="112.7999267578125" text="Serija busa" />
         </columns>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
       </TableView>
    </center>
    <right>
-      <GridPane BorderPane.alignment="CENTER">
+      <GridPane prefHeight="276.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="135.20000457763672" minWidth="10.0" prefWidth="131.99999237060547" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.4000244140625" minWidth="10.0" prefWidth="68.00000762939453" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints maxHeight="213.60000610351562" minHeight="0.0" prefHeight="204.80001831054688" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="266.8" minHeight="10.0" prefHeight="190.3999816894531" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" onAction="#dodajVozaca" text="Dodaj vozaca">
+            <Button mnemonicParsing="false" onAction="#dodajVozaca" text="Dodaj vozaca" GridPane.halignment="CENTER" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </GridPane.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#dodajBus" text="Dodaj bus" GridPane.columnIndex="1">
+            <Button mnemonicParsing="false" onAction="#dodajBus" text="Dodaj bus" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <GridPane.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </GridPane.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#obrisiVozaca" text="Obrisi vozaca" GridPane.rowIndex="1">
+            <Button mnemonicParsing="false" onAction="#obrisiVozaca" text="Obrisi vozaca" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
                <GridPane.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </GridPane.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#obrisiBus" text="Obrisi bus" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button mnemonicParsing="false" onAction="#obrisiBus" text="Obrisi bus" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </GridPane.margin>

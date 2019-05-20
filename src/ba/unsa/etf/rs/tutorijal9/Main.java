@@ -9,7 +9,6 @@ import java.io.IOException;
 
 public class Main extends Application {
 
-    private static TransportDAO dao ;
     @Override
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/glavni.fxml"));
@@ -25,10 +24,8 @@ public class Main extends Application {
         launch(args);
     }
 
-
-
-
- /*   public static void main(String[] args) {
+ /*  private static TransportDAO dao ;
+ public static void main(String[] args) {
 
         dao = TransportDAO.getInstance();
         Scanner tok = new Scanner(System.in);

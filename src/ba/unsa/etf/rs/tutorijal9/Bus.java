@@ -1,5 +1,7 @@
 package ba.unsa.etf.rs.tutorijal9;
 
+import javafx.beans.property.SimpleStringProperty;
+
 public class Bus {
     private int id;
     private String proizvodjac;
@@ -20,22 +22,22 @@ public class Bus {
     public Bus(){ }
 
     public Bus(String proizvodjac, String serija, int numberOfSeats) {
-        this.proizvodjac = proizvodjac;
-        this.serija = serija;
+        this.proizvodjac = (proizvodjac);
+        this.serija = (serija);
         this.numberOfSeats = numberOfSeats;
     }
 
     public Bus( int Id, String proizvodjac, String serija, int numberOfSeats) {
         id = Id;
-        this.proizvodjac = proizvodjac;
-        this.serija = serija;
+        this.proizvodjac = (proizvodjac);
+        this.serija = (serija);
         this.numberOfSeats = numberOfSeats;
 
     }
    public Bus(int Id, String proizvodjac, String serija, int numberOfSeats, Driver firstDriver, Driver secondDriver) {
         id = Id;
-        this.proizvodjac = proizvodjac;
-        this.serija = serija;
+        this.proizvodjac = (proizvodjac);
+        this.serija = (serija);
         this.numberOfSeats = numberOfSeats;
 
         FirstDriver = firstDriver;
@@ -51,19 +53,19 @@ public class Bus {
     }
 
     public String getMaker() {
-        return proizvodjac;
+        return String.valueOf(proizvodjac);
     }
 
     public void setProizvodjac(String proizvodjac) {
-        this.proizvodjac = proizvodjac;
+        this.proizvodjac = (proizvodjac);
     }
 
     public String getSerija() {
-        return serija;
+        return String.valueOf(serija);
     }
 
     public void setSerija(String serija) {
-        this.serija = serija;
+        this.serija = (serija);
     }
 
     public int getSeatNumber() {
@@ -92,15 +94,7 @@ public class Bus {
 
     @Override
     public String toString() {
-        String ispisBusa = "";
-        ispisBusa += this.proizvodjac + " " + this.serija + " ( seats: " + this.getSeatNumber() + " )";
-        if (FirstDriver != null) {
-            ispisBusa += FirstDriver.toString();
-        }
-        if (SecondDriver != null) {
-            ispisBusa += SecondDriver.toString();
-        }
-        return ispisBusa;
+        return proizvodjac+" "+serija ;
     }
 }
 
