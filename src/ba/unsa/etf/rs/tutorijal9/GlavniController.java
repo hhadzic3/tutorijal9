@@ -1,6 +1,5 @@
 package ba.unsa.etf.rs.tutorijal9;
 
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -55,7 +54,7 @@ public class GlavniController {
         Parent root = null;
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/driver.fxml"));
-            DriverController driverController = new DriverController();
+            DriverController driverController = new DriverController(null);
             loader.setController(driverController);
             root = loader.load();
             stage.setTitle("Drivers");
@@ -81,7 +80,7 @@ public class GlavniController {
         Parent root = null;
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/bus.fxml"));
-            BusController busController = new BusController();
+            BusController busController = new BusController(null);
             loader.setController(busController);
             root = loader.load();
             stage.setTitle("Bus");
@@ -148,7 +147,7 @@ public class GlavniController {
         Parent root = null;
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/driver.fxml"));
-            DriverController driverController = new DriverController();
+            DriverController driverController = new DriverController(driver);
             loader.setController(driverController);
             root = loader.load();
             stage.setTitle("Driver");
@@ -161,7 +160,6 @@ public class GlavniController {
                 if (driver1 != null) {
                     dao.izmijeniDrivera(driver1);
                     listDrivera.setAll(dao.getDrivers());
-
                 }
             } );
         } catch (IOException e) {
@@ -178,7 +176,7 @@ public class GlavniController {
         Parent root = null;
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/bus.fxml"));
-            BusController busController = new BusController();
+            BusController busController = new BusController(bus);
             loader.setController(busController);
             root = loader.load();
             stage.setTitle("Bus");
@@ -191,7 +189,6 @@ public class GlavniController {
                 if (bus1 != null) {
                     dao.izmijeniBus(bus1);
                     listBusses.setAll(dao.getBusses());
-
                 }
             } );
         } catch (IOException e) {

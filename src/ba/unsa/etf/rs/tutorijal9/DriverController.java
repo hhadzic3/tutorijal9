@@ -15,7 +15,9 @@ public class DriverController {
     public DatePicker pikerWork;
     private Driver driver;
 
-    public DriverController() { }
+    public DriverController(Driver driver) {
+        this.driver = driver;
+    }
 
     @FXML
     public void initialize() {

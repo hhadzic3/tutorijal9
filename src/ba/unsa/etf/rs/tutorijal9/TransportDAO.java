@@ -17,7 +17,7 @@ public class TransportDAO {
     private static PreparedStatement dajVozaceUpit,dajBusUpit,
             odrediIdDriveraUpit,truncVozaciBuseva, dodajVouzacaBusa , addDriver , obrisiBusUpit ,
             dodajBusUpit ,obrisiDriverUpit ,odrediIdBusaUpit, truncBus , truncDriver ,
-            updateBus ,updateDriver,dajJMB , getDodjelaVozaci;
+            updateBus ,updateDriver,dajJMB , getDodjelaVozaci , busById , driverById;
 
 
     private static TransportDAO instance;
@@ -49,20 +49,20 @@ public class TransportDAO {
             dajVozaceUpit = conn.prepareStatement("SELECT * FROM Vozac;");
             dajBusUpit = conn.prepareStatement("SELECT * FROM Bus");
             dodajBusUpit = conn.prepareStatement("INSERT INTO Bus VALUES(?,?,?,?,?)");
+            // daj id
             odrediIdBusaUpit = conn.prepareStatement("SELECT MAX(bus_id)+1 FROM Bus");
             odrediIdDriveraUpit = conn.prepareStatement("SELECT MAX(vozac_id)+1 FROM Vozac");
+            // Delete
             truncBus = conn.prepareStatement("DELETE FROM Bus");
             truncDriver = conn.prepareStatement("DELETE FROM Vozac");
             truncVozaciBuseva = conn.prepareStatement("DELETE FROM VozaciBuseva");
-            updateDriver = conn.prepareStatement("UPDATE Vozac SET ime=?, prezime=?, JMB=?, datum_rodjenja=?, datum_zaposljenja=? WHERE vozac_id=?");
-            updateBus = conn.prepareStatement("UPDATE Bus SET proizvodjac=?, serija=?, broj_sjedista=?, broj_vozaca=? WHERE bus_id=?");
+            // update
+            updateDriver = conn.prepareStatement("UPDATE Vozac SET ime=?, prezime=?, JMB=?, datum_rodjenja=?, datum_zaposljenja=? WHERE vozac_id=?; commit;");
+            updateBus = conn.prepareStatement("UPDATE Bus SET proizvodjac=?, serija=?, broj_sjedista=?, broj_vozaca=? WHERE bus_id=?; commit; ");
+            // by Id
+            busById = conn.prepareStatement("SELECT bus_id, proizvodjac, serija, broj_sjedista, broj_vozaca from Bus where bus_id =?");
+            driverById = conn.prepareStatement("SELECT vozac_id, ime, prezime, JMB, datum_rodjenja, datum_zaposljenja  from Vozac where vozac_id =?");
 
-
-/*
-            getDodjelaVozaci = conn.prepareStatement("SELECT DISTINCT v.vozac_id, v.ime, v.prezime, v.JMB, v.datum_rodjenja, v.datum_zaposljenja" +
-                    " FROM VozaciBuseva vd , Vozac v WHERE vd.driverId = v.vozac_id AND vd.busId=?");
-            dodajVouzacaBusa = conn.prepareStatement("INSERT INTO VozaciBuseva VALUES (?,? , null)");
-*/
         } catch (SQLException e) {
             regenerisiBazu();
             e.printStackTrace();
@@ -218,6 +218,44 @@ public class TransportDAO {
         return bus;
     }
 
+    public void izmijeniDrivera (Driver driver) {
+        try {
+            driverById.clearParameters();
+            driverById.setInt(1,driver.getId());
+            ResultSet res = driverById.executeQuery();
+            while(res.next()) {
+                updateDriver.setString(1, driver.getIme());
+                updateDriver.setString(2, driver.getPrezime());
+                updateDriver.setString(3, driver.getJMB());
+                updateDriver.setDate(4, Date.valueOf(driver.getBirthDate()));
+                updateDriver.setDate(5, Date.valueOf(driver.getWorkDate()));
+                updateDriver.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void izmijeniBus(Bus bus) {
+        try {
+            /*busById.clearParameters();
+            busById.setInt(1,bus.getId());
+            ResultSet res = busById.executeQuery();
+            while(res.next()) {
+                updateBus.clearParameters();*/
+            updateBus.setString(1, bus.getProizvodjac());
+            updateBus.setString(2, bus.getSerija());
+            updateBus.setInt(3, bus.getNumberOfSeats());
+            updateBus.setInt(4, bus.getNumberOfDrivers());
+            updateBus.executeUpdate();
+            //}
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+    }
+
 
     public void deleteBus(Bus bus) {
         try {
@@ -244,33 +282,6 @@ public class TransportDAO {
             truncDriver.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
-        }
-    }
-
-    public void izmijeniDrivera (Driver driver) {
-        try {
-            updateDriver.setString(1, driver.getIme());
-            updateDriver.setString(2, driver.getPrezime());
-            updateDriver.setString(3, driver.getJMB());
-            updateDriver.setDate(4, Date.valueOf(driver.getBirthDate()));
-            updateDriver.setDate(5, Date.valueOf(driver.getWorkDate()));
-            updateDriver.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println(e.getMessage());
-        }
-    }
-
-    public void izmijeniBus(Bus bus) {
-        try {
-            updateBus.setString(1, bus.getProizvodjac());
-            updateBus.setString(2, bus.getSerija());
-            updateBus.setInt(3, bus.getNumberOfSeats());
-            updateBus.setInt(4, bus.getNumberOfDrivers());
-            updateBus.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println(e.getMessage());
         }
     }
 

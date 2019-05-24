@@ -12,7 +12,9 @@ public class BusController {
     public TextField fldBrSjedista;
     public Spinner spinerBrVozaca;
     private Bus bus;
-    public BusController() { }
+    public BusController(Bus bus) {
+        this.bus = bus;
+    }
 
     @FXML
     public void initialize() {
